@@ -1,0 +1,57 @@
+1. Crack the hash
+2. OpenVPN
+3. Introductory Networking
+4. Bounty Hacker
+5. Python Basics
+6. Bash Scripting
+7. Linux Fundamentals Part 1
+8. What is Networking?
+9. Junior Security Analyst Intro
+10. Pyramid Of Pain
+11. Cyber Kill Chain
+12. Offensive Security Intro (v1)
+13. Unified Kill Chain
+14. Careers in Cyber
+15. Search Skills
+16. Defensive Security Intro
+17. Pickle Rick
+18. How Websites Work
+19. Putting it all together
+20. DNS in Detail
+21. HTTP in Detail
+22. Intro to LAN
+23. OSI Model
+24. Packets & Frames
+25. Extending Your Network
+26. Compiled
+27. Offensive Security Intro (v2)
+28. Virtualisation Basics
+29. Operating Systems: Introduction
+30. Client-Server Basics
+31. Inside a Computer System
+32. Computer Types
+33. Operating System Security
+34. x86 Architecture Overview
+35. Networking Concepts
+36. Linux CLI Basics
+37. Data Representation
+38. Data Encoding
+39. JavaScript: Simple Demo
+40. Python: Simple Demo
+41. Windows Basics
+42. Cloud Computing Fundamentals
+43. Windows CLI Basics
+44. The CIA Triad
+45. Database SQL Basics
+46. Cryptography Concepts
+47. Become a Hacker
+48. Become a Defender
+49. Basic Pentesting
+50. RootMe
+51. Nmap
+52. Neighbour
+53. Lo-Fi
+54. CyberHeroes
+55. Intro to Containerisation
+56. The Game
+57. Oracle 9
