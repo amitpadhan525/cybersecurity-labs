@@ -1,27 +1,36 @@
-Layer 7: Application
-    This layer provides network services to user application.
-    Attack: SQLi,XSS
-Layer 6: Presentation 
-    This layer change the data format.
-    Encryption/Decryption
-    Data compression
-Layer 5: Session
-    This layer establish session for communication.
-    This manages session ,dialog contro,synchronization,authontication and authorization
-Layer 4: Transport
-    This layer responsible for end-to-end communication.
-    segmentation:Breaks large data streams for application into smaller.
-    Error detection:Check errors in data using checksum.
-    Protocol: TCP,UDP
-    Attack: SYN flood
-Layer 3: Network
-    This layer delivers packets end-to-end across internet.
-    This uses IP address
-    Attack: IP spoofing
-Layer 2: Data Link 
-    This layer responsible for node-to-node transfer of data in local network.
-    This uses MAC address for identifing devices uniqckly.
-    Attack: ARP spoofing
-Layer 1: Physical
-    This layer transmmit data in bit.
+# OSI Model Cheat Sheet
 
+## Layer 7: Application
+- Job: Provides network services to user applications
+- Protocols: HTTP, HTTPS, DNS, FTP, SMTP
+- Attack: SQLi, XSS, SSRF
+
+## Layer 6: Presentation
+- Job: Changes data format
+- Encryption/Decryption
+- Data compression
+
+## Layer 5: Session
+- Job: Establishes session for communication
+- Manages session, dialog control, synchronization, authentication
+
+## Layer 4: Transport
+- Job: Responsible for end-to-end communication
+- Segmentation: Breaks large data into smaller pieces
+- Error detection: Checks errors using checksum
+- Protocols: TCP, UDP
+- Attack: SYN flood
+
+## Layer 3: Network
+- Job: Delivers packets across internet
+- Uses IP address for routing
+- Attack: IP spoofing
+
+## Layer 2: Data Link
+- Job: Node-to-node transfer on local network
+- Uses MAC address to identify devices uniquely
+- Attack: ARP spoofing
+
+## Layer 1: Physical
+- Job: Transmits raw bits on the wire
+- Examples: Cables, WiFi signals
